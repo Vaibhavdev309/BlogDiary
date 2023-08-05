@@ -1,0 +1,13 @@
+<% var dir = process.cwd() %>
+<%- include(dir + "/views/partials/header.ejs") %>
+<h1>Home</h1>
+<p>
+  <%=homeStartingContent%>
+</p>
+<%posts.forEach(function(post){%>
+<h1><%=post.composeTitle%></h1>
+<p><%=(post.composeBody).slice(0,100) + "..."%></p>
+<%var link = "posts" + post.composeTitle%>
+<a href="posts/<%=post.composeTitle%>">Read More</a>
+<%})%>
+<%- include(dir + "/views/partials/footer.ejs") %>
